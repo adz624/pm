@@ -1,0 +1,33 @@
+defaults: &defaults
+  redis: 'localhost'
+  pusher: 
+    app_id: ''
+    key: ''
+    secret: ''
+  
+  # Mail Sender Config
+  sender: '"PM" <support@pm.com>'
+  assets_url: 'http://pm.dev'
+  domain: 'pm.dev'
+  # AWS S3
+  s3_bucket: '' # S3 bucket name
+  s3_domain: '' # S3 Domain include bucket name
+  aws:
+    access_key_id: ''
+    secret_access_key: ''
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+  assets_url: ''
+  domain: ''
+
+production:
+  <<: *defaults
+  redis: 'localhost'
+  assets_url: ''
+  domain: ''
+  s3_bucket: ''
+  s3_domain: ''
